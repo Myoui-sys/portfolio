@@ -19,14 +19,6 @@
     color: var(--primary);
 }
 
-.skill-category-symbol {
-    width: 25px;
-    color: var(--primary);
-    font-size: 30px;
-    line-height: .7;
-    text-align: center;
-}
-
 .skill-card h2 {
     font-family: "Manrope", sans-serif;
     font-size: 20px;
