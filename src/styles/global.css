@@ -15,6 +15,9 @@ body {
     background-color: var(--background);
     color: var(--text-primary);
     font-family: "Manrope", sans-serif;
+    min-width: 320px;
+    min-height: 100vh;
+    line-height: 1.6;
 }
 
 h1,
@@ -41,4 +44,91 @@ button {
 img {
     max-width: 100%;
     display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.page {
+    width: min(var(--container), calc(100% - 10vw));
+    margin: 0 auto;
+    padding: 64px 0 72px;
+    min-height: calc(100vh - 154px);
+}
+
+.eyebrow {
+    color: var(--primary-light);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    text-transform: uppercase;
+}
+
+.accent {
+    color: var(--primary);
+}
+
+.display-title {
+    max-width: 760px;
+    margin-top: 18px;
+    font-size: clamp(46px, 5vw, 70px);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -.02em;
+}
+
+.lead {
+    color: var(--text-secondary);
+    font-size: 19px;
+    line-height: 1.65;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 0 28px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-weight: 700;
+    transition: transform .2s ease, background-color .2s ease;
+    background-color: var(--surface)
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    background: rgba(131, 56, 236, .12);
+}
+
+.button-primary {
+    background: var(--primary);
+}
+
+.button-primary:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 760px) {
+    .page {
+        width: min(100% - 36px, var(--container));
+        padding: 44px 0 56px;
+    }
+
+    .display-title {
+        font-size: clamp(42px, 14vw, 62px);
+    }
+
+    .lead {
+        font-size: 17px;
+    }
 }

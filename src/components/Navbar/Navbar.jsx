@@ -4,7 +4,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <header className="header">
-      <nav className="navbar">
+      <nav className="navbar" aria-label="Navegação principal">
 
         <NavLink to="/" className="logo">
           Dacy<span>.</span>
@@ -13,7 +13,7 @@ function Navbar() {
         <ul className="nav-list">
 
           <li>
-            <NavLink to="/">
+            <NavLink to="/" end>
               Início
             </NavLink>
           </li>

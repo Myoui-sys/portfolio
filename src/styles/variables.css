@@ -1,13 +1,15 @@
 :root {
-    --background: #08090D;
-    --surface: #15161C;
+    --background: #08090d;
+    --surface: #15161c;
+    --surface-soft: #101116;
     --navbar: #101112;
-
-    --border: #272832;
-
-    --primary: #7C3AED;
-    --primary-light: #C6A4FF;
-
-    --text-primary: #F5F5F7;
-    --text-secondary: #A7A7B0;
+    --border: #292a35;
+    --primary: #8338ec;
+    --primary-dark: #6420d5;
+    --primary-light: #c6a4ff;
+    --text-primary: #f5f5f7;
+    --text-secondary: #a7a7b0;
+    --text-muted: #747580;
+    --container: 1728px;
+    --radius: 18px;
 }

@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import Home from "./pages/Home/Home.jsx";
 import About from "./pages/About/About.jsx";
 import Skills from "./pages/Skills/Skills.jsx";
@@ -21,6 +22,8 @@ function App() {
         <Route path="/experiencia" element={<Experience />} />
         <Route path="/contato" element={<Contact />} />
       </Routes>
+
+      <Footer />
     </>
   );
 }

@@ -1,0 +1,17 @@
+.experience-page .section-title .lead { max-width: 700px; }
+.experience-layout { margin-top: 12px; display: grid; grid-template-columns: 1.25fr .95fr; gap: 30px; }
+.timeline { padding: 18px 54px 18px 0; position: relative; }
+.timeline::before { content: ""; position: absolute; top: 56px; bottom: 46px; left: 44px; width: 2px; background: var(--primary); }
+.experience-aside { display: grid; gap: 18px; }
+.professional-skills, .awards { padding: 30px; }
+.professional-skills ul { margin-top: 18px; }
+.professional-skills li { padding: 12px 0; color: var(--text-secondary); border-bottom: 1px solid var(--border); }
+.professional-skills li::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 14px; border-radius: 50%; background: var(--primary); }
+.awards > div { padding: 18px 0; display: grid; grid-template-columns: 48px 1fr; gap: 16px; }
+.awards > div + div { border-top: 1px solid var(--border); }
+.awards > div > span { color: #ffd000; font-size: 32px; }
+.awards h2 { font-size: 22px; font-weight: 400; line-height: 1.2; }
+.awards p:not(.eyebrow) { color: var(--text-secondary); font-size: 14px; }
+
+@media (max-width: 940px) { .experience-layout { grid-template-columns: 1fr; margin-top: 40px; } }
+@media (max-width: 620px) { .timeline { padding-right: 8px; } }

@@ -1,0 +1,53 @@
+.experience-card {
+    position: relative;
+    padding: 22px 22px 30px 84px;
+}
+
+.experience-card + .experience-card {
+    border-top: 1px solid var(--border);
+}
+
+.experience-dot {
+    position: absolute;
+    left: 35px;
+    top: 30px;
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--primary);
+}
+
+.experience-card h2,
+.experience-child h3 {
+    font-size: 23px;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.experience-card h2 small {
+    font: inherit;
+}
+
+.experience-card p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.experience-card .experience-period {
+    color: #9c67eb;
+}
+
+.experience-child {
+    margin-top: 22px;
+    padding-left: 52px;
+    position: relative;
+}
+
+.experience-child::before {
+    content: "✦";
+    position: absolute;
+    left: 4px;
+    top: 3px;
+    color: var(--primary);
+}

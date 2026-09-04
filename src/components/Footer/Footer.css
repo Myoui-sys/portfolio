@@ -1,0 +1,37 @@
+.footer {
+    min-height: 72px;
+    padding: 20px 5vw;
+    background: var(--navbar);
+    border-top: 1px solid #14151b;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-size: 12px;
+}
+
+.footer-links {
+    position: absolute;
+    right: 5vw;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
+@media (max-width: 620px) {
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-links {
+        position: static;
+    }
+}

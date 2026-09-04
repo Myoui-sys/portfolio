@@ -1,0 +1,19 @@
+.projects-page {
+    display: grid;
+    grid-template-columns: .75fr 1.35fr;
+    gap: 64px 80px;
+}
+
+.projects-intro { grid-row: span 1; }
+.featured-projects { align-self: end; }
+.project-section-title { font: 20px "Manrope", sans-serif; display: flex; align-items: center; gap: 10px; }
+.project-section-title::after { content: ""; flex: 1; height: 1px; background: var(--border); margin-left: 18px; }
+.project-section-title span { color: var(--primary); font-size: 34px; }
+.featured-grid { margin-top: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 46px; }
+.featured-grid .project-card { display: block; }
+.featured-grid .project-preview { min-height: 160px; }
+.project-category { grid-column: 1 / -1; }
+.project-grid { margin-top: 18px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 52px; }
+
+@media (max-width: 1250px) { .projects-page { grid-template-columns: 1fr; } .project-category { grid-column: auto; } .project-grid { grid-template-columns: 1fr 1fr; gap: 22px; } }
+@media (max-width: 760px) { .featured-grid, .project-grid { grid-template-columns: 1fr; gap: 18px; } }

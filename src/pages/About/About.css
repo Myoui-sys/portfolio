@@ -1,0 +1,38 @@
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.45fr .72fr 1fr;
+    gap: 22px;
+    align-items: start;
+}
+
+.about-copy > p:not(.eyebrow) {
+    margin-top: 30px;
+    color: var(--text-secondary);
+    font-size: 18px;
+    line-height: 1.78;
+}
+
+.about-card,
+.education-card { padding: 30px; }
+.about-card h2,
+.education-card h2,
+.about-bottom h2 { margin-top: 8px; font-size: 28px; font-weight: 400; line-height: 1.15; }
+.dot-list { margin-top: 26px; display: grid; gap: 20px; color: var(--text-secondary); }
+.dot-list li::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 14px; border-radius: 50%; background: var(--primary); }
+.about-middle { display: grid; gap: 16px; }
+.language-card { position: relative; }
+.language-card > p:not(.eyebrow) { color: var(--text-secondary); }
+.language-card > .about-asset-icon { position: absolute; right: 24px; bottom: 22px; }
+.education-card > div { display: grid; grid-template-columns: 66px 1fr; gap: 16px; padding: 22px 0; }
+.education-card > div + div { border-top: 1px solid var(--border); }
+.about-asset-icon { width: 58px; height: 58px; object-fit: contain; }
+.education-card small { color: var(--primary); text-transform: uppercase; }
+.education-card p:not(.eyebrow) { color: #9c67eb; }
+.about-bottom { margin-top: 16px; padding-top: 26px; border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1.4fr; gap: 70px; }
+.about-bottom > div + div { padding-left: 38px; border-left: 1px solid var(--border); }
+.about-bottom > div > p:last-child { margin-top: 14px; color: var(--text-secondary); }
+.about-bottom ul { margin-top: 12px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.about-bottom li { padding: 8px 14px; text-align: center; border: 1px solid #59308d; border-radius: 999px; font-size: 14px; }
+
+@media (max-width: 1150px) { .about-grid { grid-template-columns: 1.2fr 1fr; } .education-card { grid-column: 1 / -1; } }
+@media (max-width: 760px) { .about-grid, .about-bottom { grid-template-columns: 1fr; } .about-bottom > div + div { padding-left: 0; border-left: 0; } .about-bottom ul { grid-template-columns: 1fr; } }
