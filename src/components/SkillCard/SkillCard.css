@@ -5,6 +5,11 @@
     border: 1px solid rgba(131, 56, 236, .78);
     border-radius: 22px;
     background: var(--surface);
+    transition: transform 0.1s ease-in-out;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
 }
 
 .skill-card-heading {

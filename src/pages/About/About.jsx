@@ -10,9 +10,9 @@ function About() {
         <div className="about-copy">
           <p className="eyebrow">Sobre mim</p>
           <h1 className="display-title">Mais sobre minha <span className="accent">jornada</span>.</h1>
-          <p>Sou graduada em Análise e Desenvolvimento de Sistemas e continuo aprofundando minha formação em tecnologia por meio do Programa Transforme-se, com foco em Desenvolvimento Front-End, e da formação FAP em Teste de Software pela APONTI. Tenho interesse em desenvolvimento Full-Stack, automação, qualidade de software e construção de soluções digitais eficientes.</p>
+          <p>Sou graduada em Análise e Desenvolvimento de Sistemas e continuo aprofundando minha formação em tecnologia por meio do Programa Transforme-se, com foco em Desenvolvimento Front-End, e da Formação Acelerada em Programação em Teste de Software pela APONTI. Tenho interesse em desenvolvimento Full-Stack, automação, qualidade de software e construção de soluções digitais eficientes.</p>
           <p>Minha trajetória é guiada pela vontade de transformar problemas reais em soluções simples, funcionais e bem estruturadas. Gosto de aprender constantemente e me manter atualizada com novas tecnologias e boas práticas.</p>
-          <p>Ao longo dos meus projetos, desenvolvi não apenas habilidades técnicas, mas também competências como comunicação, organização, resolução de problemas e trabalho em equipe.</p>
+          <p>Ao longo dos meus projetos, desenvolvi não apenas habilidades técnicas, mas também competências como comunicação, organização, resolução de problemas e trabalho em equipe, características que considero essenciais para gerar impacto.</p>
         </div>
 
         <div className="about-middle">

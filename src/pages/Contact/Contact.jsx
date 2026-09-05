@@ -8,7 +8,7 @@ function Contact() {
     const data = new FormData(event.currentTarget);
     const subject = encodeURIComponent(`Contato de ${data.get("name")}`);
     const body = encodeURIComponent(`${data.get("message")}\n\nE-mail: ${data.get("email")}`);
-    window.location.href = `mailto:contato@dacy.dev?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:dacypsm09@gmail.com?subject=${subject}&body=${body}`;
   }
 
   return (

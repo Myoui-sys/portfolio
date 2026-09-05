@@ -23,7 +23,8 @@ function Home() {
           <p>Desenvolvo aplicações web e soluções digitais intuitivas, acessíveis e eficientes, unindo Front-End, Back-End e automação para transformar necessidades reais em produtos funcionais.</p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/projetos">Ver projetos <Icon src={rightArrowIcon} /></Link>
-            <a className="button" href="/curriculo.pdf" download>Baixar currículo <Icon src={downloadIcon} /></a>
+            <a className="button" href="/curriculo.pdf" download>Baixar currículo   <Icon src={downloadIcon} className="download-icon" />
+</a>
           </div>
           <div className="hero-socials">
             <a href="https://github.com/Myoui-sys" target="_blank" rel="noreferrer">
