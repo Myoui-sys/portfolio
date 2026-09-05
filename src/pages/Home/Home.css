@@ -135,6 +135,15 @@
     display: grid;
     gap: 10px;
     z-index: 2;
+    cursor: pointer;
+}
+
+.floating-skills div {
+    transition: transform 0.3s ease-out; 
+}
+
+.floating-skills div:hover {
+    transform: scale(1.08);
 }
 
 .floating-skills>div {
