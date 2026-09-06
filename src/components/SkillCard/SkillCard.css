@@ -9,7 +9,7 @@
 }
 
 .skill-card:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .skill-card-heading {
@@ -54,6 +54,12 @@
     width: 55px;
     height: 55px;
     object-fit: contain;
+    transition: transform 0.1s ease-in-out;
+    cursor: pointer;
+}
+
+.skill-technologies img:hover {
+    transform: scale(1.05);
 }
 
 @media (max-width: 1100px) {
