@@ -29,50 +29,134 @@ export const skills = [
     title: "Front-End",
     categoryIcon: codeIcon,
     items: [
-      { name: "HTML", icon: htmlIcon },
-      { name: "CSS", icon: cssIcon },
-      { name: "TypeScript", icon: typescriptIcon },
-      { name: "JavaScript", icon: javascriptIcon },
-      { name: "React", icon: reactIcon },
+      {
+        name: "HTML",
+        icon: htmlIcon,
+        url: "https://developer.mozilla.org/pt-BR/docs/Web/HTML",
+      },
+      {
+        name: "CSS",
+        icon: cssIcon,
+        url: "https://developer.mozilla.org/pt-BR/docs/Web/CSS",
+      },
+      {
+        name: "TypeScript",
+        icon: typescriptIcon,
+        url: "https://www.typescriptlang.org/",
+      },
+      {
+        name: "JavaScript",
+        icon: javascriptIcon,
+        url: "https://developer.mozilla.org/pt-BR/docs/Web/JavaScript",
+      },
+      {
+        name: "React",
+        icon: reactIcon,
+        url: "https://react.dev/",
+      },
     ],
   },
+
   {
     title: "Back-End",
     categoryIcon: dataIcon,
     items: [
-      { name: "Python", icon: pythonIcon },
-      { name: "Java", icon: javaIcon },
-      { name: "Node.js", icon: nodeIcon },
+      {
+        name: "Python",
+        icon: pythonIcon,
+        url: "https://www.python.org/",
+      },
+      {
+        name: "Java",
+        icon: javaIcon,
+        url: "https://dev.java/",
+      },
+      {
+        name: "Node.js",
+        icon: nodeIcon,
+        url: "https://nodejs.org/",
+      },
     ],
   },
+
   {
     title: "Banco de Dados & Serviços",
     categoryIcon: backIcon,
     items: [
-      { name: "MySQL", icon: mysqlIcon },
-      { name: "PostgreSQL", icon: postgresqlIcon },
-      { name: "Supabase", icon: supabaseIcon },
+      {
+        name: "MySQL",
+        icon: mysqlIcon,
+        url: "https://www.mysql.com/",
+      },
+      {
+        name: "PostgreSQL",
+        icon: postgresqlIcon,
+        url: "https://www.postgresql.org/",
+      },
+      {
+        name: "Supabase",
+        icon: supabaseIcon,
+        url: "https://supabase.com/",
+      },
     ],
   },
+
   {
     title: "QA & Testes",
     categoryIcon: infiniteIcon,
     items: [
-      { name: "Playwright", icon: playwrightIcon },
-      { name: "Cucumber", icon: cucumberIcon },
-      { name: "Gherkin", icon: gherkinIcon },
+      {
+        name: "Playwright",
+        icon: playwrightIcon,
+        url: "https://playwright.dev/",
+      },
+      {
+        name: "Cucumber",
+        icon: cucumberIcon,
+        url: "https://cucumber.io/",
+      },
+      {
+        name: "Gherkin",
+        icon: gherkinIcon,
+        url: "https://cucumber.io/docs/gherkin/",
+      },
     ],
   },
+
   {
     title: "Ferramentas",
     categoryIcon: laptopIcon,
     items: [
-      { name: "Git", icon: gitIcon },
-      { name: "GitHub", icon: githubIcon },
-      { name: "VS CODE", icon: vscodeIcon },
-      { name: "IntelliJ IDEA", icon: intellijIcon },
-      { name: "Figma", icon: figmaIcon },
-      { name: "Trello", icon: trelloIcon },
+      {
+        name: "Git",
+        icon: gitIcon,
+        url: "https://git-scm.com/",
+      },
+      {
+        name: "GitHub",
+        icon: githubIcon,
+        url: "https://github.com/",
+      },
+      {
+        name: "VS CODE",
+        icon: vscodeIcon,
+        url: "https://code.visualstudio.com/",
+      },
+      {
+        name: "IntelliJ IDEA",
+        icon: intellijIcon,
+        url: "https://www.jetbrains.com/idea/",
+      },
+      {
+        name: "Figma",
+        icon: figmaIcon,
+        url: "https://www.figma.com/",
+      },
+      {
+        name: "Trello",
+        icon: trelloIcon,
+        url: "https://trello.com/",
+      },
     ],
   },
 ];

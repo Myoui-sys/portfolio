@@ -8,10 +8,25 @@ function SkillCard({ categoryIcon, title, items }) {
         <Icon src={categoryIcon} className="skill-category-icon" />
         <h2>{title}</h2>
       </header>
+
       <ul className="skill-technologies">
-        {items.map(({ name, icon }) => (
+        {items.map(({ name, icon, url }) => (
           <li key={name}>
-            <img src={icon} alt="" aria-hidden="true" />
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Acessar site do ${name}`}
+              title={`Acessar ${name}`}
+              className="skill-link"
+            >
+              <img
+                src={icon}
+                alt=""
+                aria-hidden="true"
+              />
+            </a>
+
             <span>{name}</span>
           </li>
         ))}
