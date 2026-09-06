@@ -16,6 +16,14 @@
 .about-card,
 .education-card {
     padding: 30px;
+    transition: 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+.about-card:hover,
+.language-card:hover,
+.education-card:hover {
+    transform: scale(1.05);
 }
 
 .display-title {
@@ -26,7 +34,7 @@
 .education-card h2,
 .about-bottom h2 {
     margin-top: 8px;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 400;
     line-height: 1.15;
 }
@@ -97,6 +105,7 @@
     color: #9c67eb;
 }
 
+
 .about-bottom {
     margin-top: 16px;
     padding-top: 26px;
@@ -129,7 +138,15 @@
     border: 1px solid #59308d;
     border-radius: 999px;
     font-size: 14px;
+    background-color: var(--surface);
+    transition: 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
 }
+
+.about-bottom li:hover {
+    transform: scale(1.05);
+}
+
 
 @media (max-width: 1150px) {
     .about-grid {
