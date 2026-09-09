@@ -9,6 +9,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -43,6 +44,7 @@ button {
 
 img {
     max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -88,6 +90,13 @@ ul {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+
+.panel:hover {
+    transform: translateY(-3px);
+    border-color: rgba(131, 56, 236, .58);
+    box-shadow: 0 16px 42px rgba(0, 0, 0, .22), 0 0 0 1px rgba(131, 56, 236, .08);
 }
 
 .button {
@@ -108,6 +117,19 @@ ul {
 .button:hover {
     transform: translateY(-2px);
     background: rgba(131, 56, 236, .12);
+    box-shadow: 0 10px 26px rgba(131, 56, 236, .18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .panel,
+    .button {
+        transition: none;
+    }
+
+    .panel:hover,
+    .button:hover {
+        transform: none;
+    }
 }
 
 .button-primary {
@@ -124,7 +146,7 @@ ul {
 
 @media (max-width: 760px) {
     .page {
-        width: min(100% - 36px, var(--container));
+        width: min(100% - 40px, var(--container));
         padding: 44px 0 56px;
     }
 
@@ -134,5 +156,17 @@ ul {
 
     .lead {
         font-size: 17px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page {
+        width: min(100% - 40px, var(--container));
+        padding-top: 36px;
+    }
+
+    .display-title {
+        font-size: clamp(38px, 13vw, 52px);
+        overflow-wrap: anywhere;
     }
 }

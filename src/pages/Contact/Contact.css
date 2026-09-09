@@ -44,11 +44,14 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     outline: 0;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary);
+    background: #12121a;
+    box-shadow: 0 0 0 3px rgba(131, 56, 236, .12);
 }
 
 .contact-form textarea {
@@ -60,8 +63,63 @@
     border: 0;
 }
 
+.contact-form .button:disabled {
+    cursor: wait;
+    opacity: .72;
+    transform: none;
+}
+
 .contact-form .button .icon {
     --icon-size: 20px;
+}
+
+.button-spinner {
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(255, 255, 255, .4);
+    border-top-color: var(--text-primary);
+    border-radius: 50%;
+    animation: contact-spin .75s linear infinite;
+}
+
+.contact-honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.form-status {
+    min-height: 24px;
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-status--success {
+    color: #8ee3b0;
+}
+
+.form-status--error {
+    color: #ffaaa5;
+}
+
+.form-status a {
+    color: var(--primary-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.form-privacy {
+    margin-top: 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+@keyframes contact-spin {
+    to { transform: rotate(360deg); }
 }
 
 .contact-info {
@@ -76,12 +134,46 @@
     gap: 22px;
 }
 
+.contact-info dl>div {
+    padding: 8px 10px;
+    margin: -8px -10px;
+    border-radius: 10px;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.contact-info dl>div:hover {
+    transform: translateX(5px);
+    background: rgba(131, 56, 236, .08);
+}
+
 .contact-info dt {
     font-weight: 700;
 }
 
 .contact-info dd {
     color: #9565d8;
+}
+
+.contact-info dd a {
+    transition: color .2s ease;
+}
+
+.contact-info dd a:hover {
+    color: var(--primary-light);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-info dl>div {
+        transition: none;
+    }
+
+    .contact-info dl>div:hover {
+        transform: none;
+    }
+
+    .button-spinner {
+        animation: none;
+    }
 }
 
 @media (max-width: 900px) {
@@ -95,5 +187,39 @@
     .form-row {
         grid-template-columns: 1fr;
         gap: 0;
+    }
+
+    .contact-grid {
+        margin-top: 38px;
+        gap: 20px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 24px 20px;
+    }
+
+    .contact-form h2,
+    .contact-info h2 {
+        font-size: 27px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px;
+    }
+
+    .contact-form .button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact-page .display-title {
+        font-size: 40px;
+    }
+
+    .contact-info dd {
+        overflow-wrap: anywhere;
     }
 }

@@ -1,14 +1,48 @@
+import { useState } from "react";
 import "./Contact.css";
 import Icon from "../../components/Icon/Icon.jsx";
 import rightArrowIcon from "../../assets/icons/Seta-Direita.svg";
 
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/dacypsm09@gmail.com";
+
 function Contact() {
-  function handleSubmit(event) {
+  const [submitStatus, setSubmitStatus] = useState("idle");
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(`Contato de ${data.get("name")}`);
-    const body = encodeURIComponent(`${data.get("message")}\n\nE-mail: ${data.get("email")}`);
-    window.location.href = `mailto:dacypsm09@gmail.com?subject=${subject}&body=${body}`;
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    if (data.get("_honey")) return;
+
+    setSubmitStatus("sending");
+
+    try {
+      const response = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          message: data.get("message"),
+          _subject: `Nova mensagem do portfólio — ${data.get("name")}`,
+          _template: "table",
+        }),
+      });
+
+      const result = await response.json();
+      if (!response.ok || result.success === false || result.success === "false") {
+        throw new Error("Form submission failed");
+      }
+
+      form.reset();
+      setSubmitStatus("success");
+    } catch {
+      setSubmitStatus("error");
+    }
   }
 
   return (
@@ -20,14 +54,30 @@ function Contact() {
       </header>
 
       <div className="contact-grid">
-        <form className="panel contact-form" onSubmit={handleSubmit}>
+        <form className="panel contact-form" onSubmit={handleSubmit} aria-describedby="form-status">
           <h2>Envie uma mensagem</h2>
-          <div className="form-row">
-            <label>Nome<input name="name" placeholder="Seu nome" required /></label>
-            <label>E-mail<input name="email" type="email" placeholder="seuemail@exemplo.com" required /></label>
+          <div className="contact-honeypot" aria-hidden="true">
+            <label>Não preencha este campo<input name="_honey" tabIndex="-1" autoComplete="off" /></label>
           </div>
-          <label>Mensagem<textarea name="message" placeholder="Conte um pouco sobre a oportunidade, projeto ou ideia." required /></label>
-          <button className="button button-primary" type="submit">Enviar mensagem <Icon src={rightArrowIcon} /></button>
+          <div className="form-row">
+            <label>Nome<input name="name" placeholder="Seu nome" autoComplete="name" required disabled={submitStatus === "sending"} /></label>
+            <label>E-mail<input name="email" type="email" placeholder="seuemail@exemplo.com" autoComplete="email" required disabled={submitStatus === "sending"} /></label>
+          </div>
+          <label>Mensagem<textarea name="message" placeholder="Conte um pouco sobre a oportunidade, projeto ou ideia." required disabled={submitStatus === "sending"} /></label>
+          <button className="button button-primary" type="submit" disabled={submitStatus === "sending"}>
+            {submitStatus === "sending" ? "Enviando..." : "Enviar mensagem"}
+            {submitStatus === "sending" ? <span className="button-spinner" aria-hidden="true" /> : <Icon src={rightArrowIcon} />}
+          </button>
+          <p
+            id="form-status"
+            className={`form-status form-status--${submitStatus}`}
+            role={submitStatus === "error" ? "alert" : "status"}
+            aria-live="polite"
+          >
+            {submitStatus === "success" && "Mensagem enviada com sucesso! Obrigada pelo contato."}
+            {submitStatus === "error" && <>Não foi possível enviar agora. Tente novamente ou escreva para <a href="mailto:dacypsm09@gmail.com">dacypsm09@gmail.com</a>.</>}
+          </p>
+          <p className="form-privacy">Seus dados serão utilizados somente para responder ao seu contato.</p>
         </form>
 
         <aside className="panel contact-info">

@@ -22,6 +22,13 @@
     color: var(--text-secondary);
     background: var(--surface-soft);
     font-size: 13px;
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.availability:hover {
+    border-color: rgba(131, 56, 236, .7);
+    box-shadow: 0 0 24px rgba(131, 56, 236, .15);
+    transform: translateY(-2px);
 }
 
 .availability i {
@@ -76,6 +83,7 @@
     display: flex;
     align-items: center;
     gap: 9px;
+    transition: color .2s ease, transform .2s ease;
 }
 
 .hero-socials .icon {
@@ -84,6 +92,7 @@
 
 .hero-socials a:hover {
     color: var(--primary-light);
+    transform: translateY(-2px);
 }
 
 .hero-visual {
@@ -103,6 +112,13 @@
     position: relative;
     background: radial-gradient(circle, rgba(131, 56, 236, .24), transparent 65%);
     box-shadow: inset 0 0 0 42px rgba(30, 19, 57, .35);
+    transition: border-color .3s ease, box-shadow .3s ease, transform .3s ease;
+}
+
+.portrait-orbit:hover {
+    border-color: rgba(131, 56, 236, .8);
+    box-shadow: inset 0 0 0 42px rgba(30, 19, 57, .35), 0 0 48px rgba(131, 56, 236, .2);
+    transform: translateY(-4px);
 }
 
 .portrait-orbit::before,
@@ -127,6 +143,11 @@
     width: 94%;
     position: relative;
     transform: translate(-3%, 1%);
+    transition: transform .3s ease;
+}
+
+.portrait-orbit:hover>img {
+    transform: translate(-3%, -1%) scale(1.015);
 }
 
 .floating-skills {
@@ -139,11 +160,14 @@
 }
 
 .floating-skills div {
-    transition: transform 0.3s ease-out; 
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
 }
 
 .floating-skills div:hover {
-    transform: scale(1.08);
+    transform: translateX(-5px) translateY(-2px);
+    border-color: rgba(131, 56, 236, .72);
+    background: #1d1b27;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25), 0 0 22px rgba(131, 56, 236, .14);
 }
 
 .floating-skills>div {
@@ -212,6 +236,17 @@
     --icon-size: 18px;
 }
 
+@media (max-width: 1280px) {
+    .home-hero {
+        grid-template-columns: minmax(420px, .95fr) 1.05fr;
+        gap: 32px;
+    }
+
+    .floating-skills>div {
+        width: 275px;
+    }
+}
+
 @media (max-width: 1050px) {
     .home-hero {
         grid-template-columns: 1fr;
@@ -221,16 +256,24 @@
     .hero-visual {
         min-height: 460px;
     }
+
+    .portrait-orbit {
+        width: min(440px, 70vw);
+    }
+
+    .floating-skills {
+        right: max(2vw, calc(50% - 330px));
+    }
 }
 
 @media (max-width: 700px) {
     .home-hero {
-        width: calc(100% - 36px);
+        width: calc(100% - 40px);
         min-height: auto;
     }
 
     .hero-copy h1 {
-        font-size: 52px;
+        font-size: clamp(48px, 14vw, 64px);
     }
 
     .hero-copy>p {
@@ -261,5 +304,68 @@
         grid-template-columns: 1fr;
         gap: 28px;
         padding-inline: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .availability,
+    .hero-socials a,
+    .portrait-orbit,
+    .portrait-orbit>img,
+    .floating-skills div {
+        transition: none;
+    }
+
+    .availability:hover,
+    .hero-socials a:hover,
+    .portrait-orbit:hover,
+    .portrait-orbit:hover>img,
+    .floating-skills div:hover {
+        transform: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .home-hero {
+        width: calc(100% - 40px);
+        padding: 46px 0;
+        gap: 28px;
+    }
+
+    .hero-copy h1 {
+        margin-top: 26px;
+        font-size: 46px;
+    }
+
+    .hero-copy h2 {
+        font-size: 25px;
+        line-height: 1.2;
+    }
+
+    .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-actions .button {
+        width: 100%;
+    }
+
+    .hero-socials {
+        gap: 18px;
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        min-height: 460px;
+    }
+
+    .portrait-orbit {
+        width: min(310px, 88vw);
+    }
+
+    .floating-skills>div {
+        width: min(290px, calc(100vw - 36px));
+        padding: 11px 14px;
     }
 }

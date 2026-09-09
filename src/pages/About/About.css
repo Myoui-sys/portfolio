@@ -10,20 +10,18 @@
     color: var(--text-secondary);
     font-size: 18px;
     line-height: 32px;
-    width: 694px;
+    width: min(694px, 100%);
 }
 
 .about-card,
 .education-card {
     padding: 30px;
-    transition: 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
 }
 
-.about-card:hover,
-.language-card:hover,
-.education-card:hover {
-    transform: scale(1.05);
+.about-card:hover .about-asset-icon,
+.education-card>div:hover .about-asset-icon {
+    transform: translateY(-3px) scale(1.05);
+    filter: drop-shadow(0 0 10px rgba(131, 56, 236, .28));
 }
 
 .display-title {
@@ -84,6 +82,11 @@
     grid-template-columns: 66px 1fr;
     gap: 16px;
     padding: 22px 0;
+    transition: transform .22s ease;
+}
+
+.education-card>div:hover {
+    transform: translateX(5px);
 }
 
 .education-card>div+div {
@@ -94,6 +97,7 @@
     width: 58px;
     height: 58px;
     object-fit: contain;
+    transition: transform .22s ease, filter .22s ease;
 }
 
 .education-card small {
@@ -139,12 +143,29 @@
     border-radius: 999px;
     font-size: 14px;
     background-color: var(--surface);
-    transition: 0.3s ease, transform 0.3s ease;
-    cursor: pointer;
+    transition: transform .22s ease, border-color .22s ease, color .22s ease, box-shadow .22s ease;
 }
 
 .about-bottom li:hover {
-    transform: scale(1.05);
+    transform: translateY(-3px);
+    border-color: var(--primary-light);
+    color: var(--text-primary);
+    box-shadow: 0 8px 22px rgba(131, 56, 236, .16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-asset-icon,
+    .education-card>div,
+    .about-bottom li {
+        transition: none;
+    }
+
+    .about-card:hover .about-asset-icon,
+    .education-card>div:hover,
+    .education-card>div:hover .about-asset-icon,
+    .about-bottom li:hover {
+        transform: none;
+    }
 }
 
 
@@ -155,6 +176,31 @@
 
     .education-card {
         grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-middle {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .education-card {
+        grid-column: auto;
+    }
+
+    .about-bottom {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-bottom>div+div {
+        padding: 28px 0 0;
+        border-top: 1px solid var(--border);
+        border-left: 0;
     }
 }
 
@@ -172,5 +218,42 @@
 
     .about-bottom ul {
         grid-template-columns: 1fr;
+    }
+
+    .about-copy>p:not(.eyebrow) {
+        margin-top: 22px;
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .about-middle {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card,
+    .education-card {
+        padding: 24px 20px;
+    }
+
+    .education-card>div {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 12px;
+    }
+
+    .about-asset-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 420px) {
+    .about-card h2,
+    .education-card h2,
+    .about-bottom h2 {
+        font-size: 23px;
+    }
+
+    .dot-list {
+        gap: 16px;
     }
 }

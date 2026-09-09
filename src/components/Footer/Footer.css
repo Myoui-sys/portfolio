@@ -29,6 +29,8 @@
     .footer {
         flex-direction: column;
         gap: 10px;
+        padding: 18px;
+        text-align: center;
     }
 
     .footer-links {
