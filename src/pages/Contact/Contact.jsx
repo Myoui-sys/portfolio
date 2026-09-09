@@ -33,7 +33,15 @@ function Contact() {
         }),
       });
 
-      const result = await response.json();
+      const responseBody = await response.text();
+      let result = {};
+
+      try {
+        result = responseBody ? JSON.parse(responseBody) : {};
+      } catch {
+        // A primeira ativação pode responder com HTML mesmo após aceitar o envio.
+      }
+
       if (!response.ok || result.success === false || result.success === "false") {
         throw new Error("Form submission failed");
       }
