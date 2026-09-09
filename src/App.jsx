@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Navigate, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
@@ -21,6 +21,7 @@ function App() {
         <Route path="/projetos" element={<Projects />} />
         <Route path="/experiencia" element={<Experience />} />
         <Route path="/contato" element={<Contact />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
 
       <Footer />
