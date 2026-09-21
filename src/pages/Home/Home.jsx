@@ -19,7 +19,7 @@ function Home() {
         <div className="hero-copy">
           <span className="availability"><i /> Disponível para oportunidades</span>
           <h1>Dacyrrôse <span className="accent">Melo</span></h1>
-          <h2>Desenvolvedora de Sotwarek</h2>
+          <h2>Desenvolvedora de Software</h2>
           <p>Desenvolvo aplicações web e soluções digitais intuitivas, acessíveis e eficientes, unindo Front-End, Back-End e automação para transformar necessidades reais em produtos funcionais.</p>
           <div className="hero-actions">
             <Link className="button button-primary" to="/projetos">Ver projetos <Icon src={rightArrowIcon} /></Link>
