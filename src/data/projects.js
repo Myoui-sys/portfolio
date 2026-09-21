@@ -15,6 +15,7 @@ import hyphenBotImage from "../assets/images/HyphenDashboardLight.png";
 import silverAwardIcon from "../assets/icons/PrêmioCinza.svg";
 import goldAwardIcon from "../assets/icons/PrêmioDourado.svg";
 import technicalIcon from "../assets/icons/Ferramenta.svg";
+import conectaRoundedImage from "../assets/images/conectamais.png";
 
 export const featuredProjects = [
   {
@@ -41,6 +42,14 @@ export const featuredProjects = [
 ];
 
 export const hackathonProjects = [
+    {
+    title: "CONECTA+",
+    description: "Solução de melhoria para a experiência de registro e tratamento das denúncias urbanas pelo Conecta Recife",
+    tags: ["IA", "Jornada do Usuário", "Hackathon"],
+    image: conectaRoundedImage,
+    postUrl: "https://lnkd.in/p/eGJQdzgf",
+  },
+
   {
     title: "NAMI",
     description: "Acessibilidade cognitiva com IA para uma navegação digital mais inclusiva.",
