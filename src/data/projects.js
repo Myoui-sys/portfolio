@@ -16,18 +16,19 @@ import silverAwardIcon from "../assets/icons/PrêmioCinza.svg";
 import goldAwardIcon from "../assets/icons/PrêmioDourado.svg";
 import technicalIcon from "../assets/icons/Ferramenta.svg";
 import conectaRoundedImage from "../assets/images/conectamais.png";
+import conectaImg from "../assets/images/conectaImg.png";
 
 export const featuredProjects = [
   {
-    title: "NAMI",
-    description: "Extensão com Inteligência Artificial para tornar a navegação digital mais acessível a pessoas neurodivergentes.",
-    tags: ["IA", "Acessibilidade", "Ideathon", "RFEC 2026"],
-    image: namiImage,
+    title: "CONECTA+",
+    description: "Solução de melhoria para a experiência de registro e tratamento das denúncias urbanas pelo Conecta Recife.",
+    tags: ["IA", "UX", "Hackathon", "Recriando a Cidade 2026"],
+    image: conectaImg,
     imagePosition: "top",
-    postUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7489800852703092736/",
+    postUrl: "https://lnkd.in/p/eGJQdzgf",
     badges: [
       { label: "Destaque", icon: goldAwardIcon, tone: "gold" },
-      { label: "2º Lugar · RFEC 2026", icon: silverAwardIcon },
+      { label: "1º Lugar · Recriando a Cidade 2026", icon: silverAwardIcon },
     ],
   },
   {
@@ -44,7 +45,7 @@ export const featuredProjects = [
 export const hackathonProjects = [
     {
     title: "CONECTA+",
-    description: "Solução de melhoria para a experiência de registro e tratamento das denúncias urbanas pelo Conecta Recife",
+    description: "Solução de melhoria para a experiência de registro e tratamento das denúncias urbanas pelo Conecta Recife.",
     tags: ["IA", "Jornada do Usuário", "Hackathon"],
     image: conectaRoundedImage,
     postUrl: "https://lnkd.in/p/eGJQdzgf",
