@@ -16,8 +16,8 @@ const professionalSkills = [
 
 const awards = [
   {
-    title: "2º Lugar — Ideathon RFEC 2026",
-    description: "Projeto NAMI · Acessibilidade Cognitiva com IA",
+    title: "1º Lugar — Hackathon Recriando a Cidade 2026",
+    description: "Projeto Conecta+ · Menos Ruído, Mais Ação",
     icon: goldAwardIcon,
   },
   {
